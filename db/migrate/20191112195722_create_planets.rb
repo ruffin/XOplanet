@@ -1,7 +1,7 @@
 class CreatePlanets < ActiveRecord::Migration[6.0]
   def change
-    create_table(:planets, id: false) do |t|
-      t.integer :id
+    create_table :planets do |t|
+      t.integer :loc_rowid
       t.text :pl_hostname
       t.text :pl_letter
       t.text :pl_name

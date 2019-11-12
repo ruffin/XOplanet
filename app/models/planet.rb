@@ -1,4 +1,4 @@
 class Planet < ApplicationRecord
-  alias_attribute :pl_name, :name
-  alias_attribute :pl_controvflag, :controversial
+  alias_attribute :name, :pl_name
+  alias_attribute :controversial, :pl_controvflag
 end

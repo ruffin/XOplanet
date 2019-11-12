@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2019_11_12_195722) do
 
-  create_table "planets", id: false, force: :cascade do |t|
-    t.integer "id"
+  create_table "planets", force: :cascade do |t|
+    t.integer "loc_rowid"
     t.text "pl_hostname"
     t.text "pl_letter"
     t.text "pl_name"
