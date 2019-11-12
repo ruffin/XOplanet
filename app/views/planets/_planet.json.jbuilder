@@ -1,0 +1,2 @@
+json.extract! planet, :id, :loc_rowid, :pl_hostname, :pl_letter, :pl_name, :pl_controvflag, :pl_pnum, :pl_orbper, :pl_orbsmax, :pl_orbeccen, :pl_orbincl, :pl_bmassj, :pl_radj, :pl_dens, :pl_nnotes, :st_dist, :gaia_dist, :st_optmag, :st_optband, :gaia_gmag, :st_teff, :st_mass, :st_rad, :rowupdate, :pl_eqt, :pl_masse, :pl_ratdor, :pl_ratror, :pl_status, :pl_mnum, :pl_publ_date, :created_at, :updated_at
+json.url planet_url(planet, format: :json)

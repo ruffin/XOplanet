@@ -1,0 +1,65 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  loc_rowid: 1
+  pl_hostname: MyText
+  pl_letter: MyText
+  pl_name: MyText
+  pl_controvflag: false
+  pl_pnum: 1
+  pl_orbper: 9.99
+  pl_orbsmax: 9.99
+  pl_orbeccen: 9.99
+  pl_orbincl: 9.99
+  pl_bmassj: 9.99
+  pl_radj: 9.99
+  pl_dens: 9.99
+  pl_nnotes: 1
+  st_dist: 9.99
+  gaia_dist: 9.99
+  st_optmag: 9.99
+  st_optband: MyText
+  gaia_gmag: MyText
+  st_teff: 9.99
+  st_mass: 9.99
+  st_rad: 9.99
+  rowupdate: MyText
+  pl_eqt: 9.99
+  pl_masse: 9.99
+  pl_ratdor: 9.99
+  pl_ratror: 9.99
+  pl_status: MyText
+  pl_mnum: 1
+  pl_publ_date: MyText
+
+two:
+  loc_rowid: 1
+  pl_hostname: MyText
+  pl_letter: MyText
+  pl_name: MyText
+  pl_controvflag: false
+  pl_pnum: 1
+  pl_orbper: 9.99
+  pl_orbsmax: 9.99
+  pl_orbeccen: 9.99
+  pl_orbincl: 9.99
+  pl_bmassj: 9.99
+  pl_radj: 9.99
+  pl_dens: 9.99
+  pl_nnotes: 1
+  st_dist: 9.99
+  gaia_dist: 9.99
+  st_optmag: 9.99
+  st_optband: MyText
+  gaia_gmag: MyText
+  st_teff: 9.99
+  st_mass: 9.99
+  st_rad: 9.99
+  rowupdate: MyText
+  pl_eqt: 9.99
+  pl_masse: 9.99
+  pl_ratdor: 9.99
+  pl_ratror: 9.99
+  pl_status: MyText
+  pl_mnum: 1
+  pl_publ_date: MyText
