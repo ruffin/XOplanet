@@ -6,10 +6,12 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^4.2.0",
+    "fsevents": "^2.1.2",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "yarn": "^1.19.1"
   },
   "version": "0.1.0",
   "devDependencies": {
