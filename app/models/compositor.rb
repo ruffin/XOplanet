@@ -3,7 +3,7 @@ class Compositor
 
   def initialize(seed)
     converted_seed = seed.is_a?(String) ? hash(seed) : seed
-    @seed = seed
+    @seed = converted_seed
   end
 
   def self.glob(subdir)
