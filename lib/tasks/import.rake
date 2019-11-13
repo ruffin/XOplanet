@@ -3,8 +3,7 @@ namespace :import do
 
   task :all => :environment do
     planets_json = download_planets
-    import_planets(planets_json)
-    planets_json.each |pj| do
+    planets_json.each do |pj|
       import_planet(pj)
       download_image(pj)
     end
@@ -17,14 +16,12 @@ namespace :import do
     JSON.parse(res.body)
   end
 
-  def import_planets(planet_json)
+  def import_planet(planet_json)
     attribute_names = Planet.new.attribute_names
-    planets_json.each |pj| do
-      Planet.find_or_create_by(pj.select{|x| attribute_names.index(x.to_s)})
-    end
+    Planet.find_or_create_by(planet_json.select{|x| attribute_names.index(x.to_s)})
   end
 
-  def download_image
+  def download_image(planet_json)
 
   end
 end
