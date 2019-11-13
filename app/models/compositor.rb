@@ -21,8 +21,7 @@ class Compositor
   end
 
   def foreground_file
-    @eyes_or_faces = seed % 2
-    @eyes_or_faces.zero? ? EYES[seed % @@eyes_length] : FACES[seed % @@faces_length]
+    EYES[seed % @@eyes_length]
   end
 
   def background
@@ -56,11 +55,7 @@ class Compositor
   end
 
   def y_offset
-    if @eyes_or_faces.zero?
       (background.height - foreground.height) / 4
-    else
-      ((background.height - foreground.height) / 2) + offset_noise
-    end
   end
 
   def hash(str)
