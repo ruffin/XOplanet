@@ -36,9 +36,14 @@ class Compositor
 
   def foreground
     @foreground ||= begin
+      retries = 0
       image = ChunkyPNG::Image.from_file foreground_file
       image.resample_bilinear!(325, (325 / image.width) * image.height)
       image
+    rescue
+      @seed += 1
+      retries += 1
+      retries < 5 ? retry : raise
     end
   end
 
