@@ -1,3 +1,13 @@
 <h1>XOPlanet</h1>
 <p>Name: <%= @name %></p>
-<img src="<%= @composition.to_data_url %>">
+<div class="wrapper">
+  <div class="container">
+    <nav>
+      <span>Back</span>
+      <%= image_tag('Logo.svg', class: 'logo') %>
+    </nav>
+    <main>
+      <img src="<%= @composition.to_data_url %>" width="375"/>
+    </main>
+  </div>
+</div>
