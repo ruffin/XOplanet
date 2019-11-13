@@ -52,14 +52,14 @@ class Compositor
   end
 
   def x_offset
-    ((background.width - foreground.width) / 2) + x_offset_noise
+    ((background.width - foreground.width) / 2) + offset_noise
   end
 
   def y_offset
     if @eyes_or_faces.zero?
       (background.height - foreground.height) / 4
     else
-      ((background.height - foreground.height) / 2) + y_offset_noise
+      ((background.height - foreground.height) / 2) + offset_noise
     end
   end
 
@@ -68,10 +68,7 @@ class Compositor
   end
 
   def x_offset_noise
-    (seed % 20) - 10
-  end
-
-  def y_offset_noise
-    (seed % 20) - 10
+    pos_neg = [1,-1].sample
+    ((seed % 120) - 60) * pos_neg
   end
 end
