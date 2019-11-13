@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Loc rowid</th>
+      <th>Pl hostname</th>
+      <th>Pl letter</th>
+      <th>Pl name</th>
+      <th>Pl controvflag</th>
+      <th>Pl pnum</th>
+      <th>Pl orbper</th>
+      <th>Pl orbsmax</th>
+      <th>Pl orbeccen</th>
+      <th>Pl orbincl</th>
+      <th>Pl bmassj</th>
+      <th>Pl radj</th>
+      <th>Pl dens</th>
+      <th>Pl nnotes</th>
+      <th>St dist</th>
+      <th>Gaia dist</th>
+      <th>St optmag</th>
+      <th>St optband</th>
+      <th>Gaia gmag</th>
+      <th>St teff</th>
+      <th>St mass</th>
+      <th>St rad</th>
+      <th>Rowupdate</th>
+      <th>Pl eqt</th>
+      <th>Pl masse</th>
+      <th>Pl ratdor</th>
+      <th>Pl ratror</th>
+      <th>Pl status</th>
+      <th>Pl mnum</th>
+      <th>Pl publ date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planets.each do |planet| %>
+      <tr>
+        <td><%= planet.loc_rowid %></td>
+        <td><%= planet.pl_hostname %></td>
+        <td><%= planet.pl_letter %></td>
+        <td><%= planet.pl_name %></td>
+        <td><%= planet.pl_controvflag %></td>
+        <td><%= planet.pl_pnum %></td>
+        <td><%= planet.pl_orbper %></td>
+        <td><%= planet.pl_orbsmax %></td>
+        <td><%= planet.pl_orbeccen %></td>
+        <td><%= planet.pl_orbincl %></td>
+        <td><%= planet.pl_bmassj %></td>
+        <td><%= planet.pl_radj %></td>
+        <td><%= planet.pl_dens %></td>
+        <td><%= planet.pl_nnotes %></td>
+        <td><%= planet.st_dist %></td>
+        <td><%= planet.gaia_dist %></td>
+        <td><%= planet.st_optmag %></td>
+        <td><%= planet.st_optband %></td>
+        <td><%= planet.gaia_gmag %></td>
+        <td><%= planet.st_teff %></td>
+        <td><%= planet.st_mass %></td>
+        <td><%= planet.st_rad %></td>
+        <td><%= planet.rowupdate %></td>
+        <td><%= planet.pl_eqt %></td>
+        <td><%= planet.pl_masse %></td>
+        <td><%= planet.pl_ratdor %></td>
+        <td><%= planet.pl_ratror %></td>
+        <td><%= planet.pl_status %></td>
+        <td><%= planet.pl_mnum %></td>
+        <td><%= planet.pl_publ_date %></td>
+        <td><%= link_to 'Show', planet %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
