@@ -235,11 +235,8 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chunky_png
-<<<<<<< HEAD
   http
-=======
   httparty (~> 0.17.1)
->>>>>>> 9ea4d90300dd816bd1c925e6f3190ddd9dde332a
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   pg
