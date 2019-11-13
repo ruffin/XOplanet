@@ -67,7 +67,7 @@ class Compositor
     Digest::MD5.hexdigest(str).to_i(16)
   end
 
-  def x_offset_noise
+  def offset_noise
     pos_neg = [1,-1].sample
     ((seed % 120) - 60) * pos_neg
   end
