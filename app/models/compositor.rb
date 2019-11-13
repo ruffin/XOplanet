@@ -43,14 +43,14 @@ class Compositor
   end
 
   def x_offset
-    (background.width - foreground.width) / (2 + x_offset_noise)
+    ((background.width - foreground.width) / 2) + x_offset_noise
   end
 
   def y_offset
     if @eyes_or_faces.zero?
-      (background.height - foreground.height) / (3 + y_offset_noise)
+      (background.height - foreground.height) / 4
     else
-      (background.height - foreground.height) / 2
+      ((background.height - foreground.height) / 2) + y_offset_noise
     end
   end
 

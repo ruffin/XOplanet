@@ -1,3 +1,57 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
+
+}
+.wrapper {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  height: 812px;
+  width: 375px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #999;
+
+  nav {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    background-color: #222;
+    height: 64px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    span {
+      float:left;
+    }
+
+    .logo {
+      position: absolute;
+      top: 23px;
+      left: 163px;
+      width: 48px;
+      height: 24px;
+      width: 48px;
+      height: 24px;
+    }
+  }
+
+  main {
+    width: 375px;
+    overflow: hidden;
+    background-color: #222;
+  }
+}
