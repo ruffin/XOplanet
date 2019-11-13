@@ -35,7 +35,11 @@ class Compositor
   end
 
   def foreground
-    @foreground ||= ChunkyPNG::Image.from_file foreground_file
+    @foreground ||= begin
+      image = ChunkyPNG::Image.from_file foreground_file
+      image.resample_bilinear!(325, (325 / image.width) * image.height)
+      image
+    end
   end
 
   def composite
