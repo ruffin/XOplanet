@@ -1,0 +1,2 @@
+class AboutMe < ApplicationRecord
+end

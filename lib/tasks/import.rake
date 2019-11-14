@@ -14,6 +14,14 @@ namespace :import do
     download_images(planets_json[0])
   end
 
+  task about_me_text: :environment do
+    file = Rails.root.join('app', 'assets', 'about_me_text.csv')
+    ActiveRecord::Base.connection.execute("Delete from about_mes")
+    File.readlines(file).each do |line|
+      AboutMe.create(description: line)
+    end
+  end
+
   def download_planets
     url = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&format=json'
     res = HTTParty.get(url)
