@@ -47,6 +47,7 @@ body {
       width: 48px;
       height: 24px;
     }
+
   }
 
   main {
@@ -59,7 +60,7 @@ body {
   .responses {
     display: flex;
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     width: 100%;
     margin-left: -10px;
     justify-content: space-evenly;
@@ -79,12 +80,28 @@ body {
         }
       }
       &.yes {
-        line-height: .8;
-        background-color: green;
+        // line-height: .8;
+        // background-color: green;
+        top: 392px;
+        left: 223px;
+        width: 80px;
+        height: 80px;
+        background-color: #3EE7C8;
+        // background: transparent url('assets/images/like.svg') 0% 0% no-repeat padding-box;
+        opacity: 1;
+        clip-path: circle(40px at center);
       }
       &.no {
-        line-height: .5;
-        background-color: red;
+        // line-height: .5;
+        // background-color: red;
+        top: 592px;
+        left: 72px;
+        width: 80px;
+        height: 80px;
+        background-color: #FF3366;
+        // background: transparent url('assetsimages/dislike.svg') 0% 0% no-repeat padding-box;
+        opacity: 1;
+        clip-path: circle(40px at center);
       }
     }
   }

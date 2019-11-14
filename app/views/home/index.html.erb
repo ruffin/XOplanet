@@ -1,11 +1,11 @@
 <h1>XOPlanet</h1>
 <p>Name: <%= @name %></p>
 <script type="text/javascript">
-  function handleClick(match) {
+  function handleClick(match, name) {
     if(match) {
-      window.location = "/?match=1"
+      window.location = `/?like=${name}`;
     } else {
-      window.location = "/"
+      window.location = "/";
     }
   }
 </script>
@@ -17,13 +17,26 @@
     </nav>
     <main>
       <img class="photo" src="<%= @composition.to_data_url %>" width="375"/>
+<!--
+     <img src="<%= @composition.to_data_url %>" width="375"/>
+      <a href="/" >
+        <%= image_tag('dislike.svg', id: "dislike-button") %>
+      </a>
+      <a href="/?like=<%= @name %>" id="like-button" >
+        <%= image_tag('like.svg') %>
+      </a> %>
+      -->
     </main>
     <div class="responses">
       <div class="no" >
-        <a onclick="handleClick(false)">⨯</a>
+        <a href="#" onclick="handleClick(false, '<%= @name %>')">
+          <%= image_tag('dislike.svg', id: "dislike-button") %>
+        </a>
       </div>
       <div class="yes">
-        <a onclick="handleClick(true)">🎔</a>
+        <a href="#" onclick="handleClick(true, '<%= @name %>')">
+          <%= image_tag('like.svg', id: "like-button") %>
+        </a>
       </div>
     </div>
   </div>
