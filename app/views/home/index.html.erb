@@ -1,5 +1,14 @@
 <h1>XOPlanet</h1>
 <p>Name: <%= @name %></p>
+<script type="text/javascript">
+  function handleClick(match) {
+    if(match) {
+      window.location = "/?match=1"
+    } else {
+      window.location = "/"
+    }
+  }
+</script>
 <div class="wrapper">
   <div class="container">
     <nav>
@@ -7,7 +16,15 @@
       <%= image_tag('Logo.svg', class: 'logo') %>
     </nav>
     <main>
-      <img src="<%= @composition.to_data_url %>" width="375"/>
+      <img class="photo" src="<%= @composition.to_data_url %>" width="375"/>
     </main>
+    <div class="responses">
+      <div class="no" >
+        <a onclick="handleClick(false)">⨯</a>
+      </div>
+      <div class="yes">
+        <a onclick="handleClick(true)">🎔</a>
+      </div>
+    </div>
   </div>
 </div>
