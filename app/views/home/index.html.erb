@@ -22,7 +22,7 @@
       <p><%= @planet.st_dist %> parsecs away</p>
       <br />
       <h3>ABOUT ME</h3>
-      <p>Lorem Ipsum</p>
+      <p><%= AboutMe.order('RANDOM()').first %></p>
       <br />
       <h3>MASS</h3>
       <p><%= @planet.st_mass %></p>

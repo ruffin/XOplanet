@@ -4,7 +4,7 @@ class Compositor
 
   def initialize(planet)
     @planet = planet
-    @seed = hash(planet.pl_name)
+    @seed = hash(planet)
   end
 
   def self.glob(subdir, suffix)
@@ -28,7 +28,7 @@ class Compositor
     @background ||= begin
       rotations = seed % 4
       # use `background_file` eventually but right now just pick the first because **COLOR**
-      canvas = ChunkyPNG::Image.from_file("app/assets/images/planets/#{planet.pl_name}/000.jpg")
+      canvas = ChunkyPNG::Image.from_file("app/assets/images/planets/#{planet}/000.jpg")
       rotations.times {|_| canvas.rotate_right! }
       canvas
     end
