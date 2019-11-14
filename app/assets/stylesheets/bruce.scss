@@ -1,0 +1,28 @@
+// Place all the styles related to the bruce controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.bruce {
+  ul {
+    display: flex;
+    justify-content:space-between;
+
+    list-style-type: none;
+    width: 100%;
+    margin: 10px 0;
+    padding: 0;
+  }
+  li {
+    opacity: 0.33;
+    &.selected {
+      opacity: 1;
+    }
+    text-align: center;
+    font-size: 14px;
+  }
+  img {
+    display: block;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 1em;
+  }
+}

@@ -1,0 +1,2 @@
+module BruceHelper
+end

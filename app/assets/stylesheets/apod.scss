@@ -2,26 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body {
+.apod {
   position: relative;
   margin: 0;
   padding: 0;
   text-align: center;
   font-size: 50px;
   color: #fff;
-  background-image: url('/assets/flag.gif') repeat;
-}
-img {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: block;
-  position: relative;
-}
-p {
-  position: absolute;
-  top: 50%;
-  font-size: 50px;
-  line-height: 50px;
-  color: #fff;
+  img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  p {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    line-height: 50px;
+    color: #fff;
+  }
 }

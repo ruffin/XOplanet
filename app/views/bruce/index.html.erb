@@ -1,0 +1,29 @@
+<script type="text/javascript">
+function changeSelection(e) {
+  window.location = window.location.href.split('?')[0] + '?des=' + e.value;
+}
+</script>
+<div class="bruce">
+  <h1>Is Bruce Willis Going To Have to Die?</h1>
+  <select onchange="changeSelection(this)">
+    <% @all_items.each do |item| %>
+      <option value="<%= item['des'] %>" <%= 'selected' if item['des'] == @selected['des'] %>><%= item['des'] %></option>
+    <% end %>
+  </select>
+
+  <p>For the body designated <b><%= @item_req['des'] %></b> things look <%= ['low', 'medhigh'].include?(@cat) ? 'good' : 'not so good' %>.
+  See, it weighs <%= number_with_precision(("%f" %  @item_req['mass']).to_i * 0.00110231, delimiter: ',', precision: 0) %> tons, and it would hit at <%= number_with_precision(("%f" % @item_req['v_imp']).to_f * 2.23694, delimiter: ',', precision: 1) %> mph.
+  </p>
+  <% if @item_req['date'] %>
+    Best guess, Bruce Willis has until <%= Date.parse(@item_req['date']) %> before he has to sacrifice himself
+  <% end %>
+
+  <ul class="classes">
+    <% %w(low med medhigh high death).each_with_index do |level, i| %>
+      <li class="<%= 'selected' if @cat == level %>">
+        <%= image_tag "#{level}.jpg"%>
+        <%= ["Should be fine", "Sorta risky, but feeling good", "Oh bring it on", "HARRRYYYYYY", "He's basically already dead."][i] %>
+      </li>
+    <% end %>
+  </ul>
+</div>
