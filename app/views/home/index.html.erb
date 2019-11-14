@@ -17,12 +17,12 @@
     <main>
       <img class="photo" src="<%= @composition.to_data_url %>" width="375"/>
     </main>
-    <div>
+    <div class="text">
       <h2><%= @planet.pl_name %></h2>
       <p><%= @planet.st_dist %> parsecs away</p>
       <br />
       <h3>ABOUT ME</h3>
-      <p><%= AboutMe.order('RANDOM()').first %></p>
+      <p><%= AboutMe.order('RANDOM()').first.description.truncate(140) %></p>
       <br />
       <h3>MASS</h3>
       <p><%= @planet.st_mass %></p>

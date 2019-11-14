@@ -16,8 +16,8 @@ namespace :import do
 
   task about_me_text: :environment do
     file = Rails.root.join('app', 'assets', 'about_me_text.csv')
-    ActiveRecord::Base.connection.execute("Delete from about_mes")
-    File.readlines(file).each do |line|
+    ActiveRecord::Base.connection.execute("DELETE FROM about_mes")
+    File.open(file).each(sep="\r") do |line|
       AboutMe.create(description: line)
     end
   end
