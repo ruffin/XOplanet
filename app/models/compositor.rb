@@ -1,24 +1,24 @@
 class Compositor
   attr_reader :seed
+  attr_reader :planet
 
-  def initialize(seed)
-    converted_seed = seed.is_a?(String) ? hash(seed) : seed
-    @seed = converted_seed
+  def initialize(planet)
+    @planet = planet
+    @seed = hash(planet.pl_name)
   end
 
-  def self.glob(subdir)
-    Dir.glob("#{Rails.root}/app/assets/images/#{subdir}/*.png").tap do |list|
+  def self.glob(subdir, suffix)
+    Dir.glob("#{Rails.root}/app/assets/images/#{subdir}/*#{suffix}").tap do |list|
       self.class_variable_set "@@#{subdir}_length".to_sym, list.length
     end
   end
 
-  BACKGROUNDS = glob('planets').freeze
-  EYES = glob('eyes').freeze
-  FACES = glob('faces').freeze
+  # BACKGROUNDS = glob('planets', '.jpg').freeze
+  EYES = glob('eyes', '.png').freeze
 
-  def background_file
-    BACKGROUNDS[seed % @@planets_length]
-  end
+  # def background_file
+  #   BACKGROUNDS[seed % @@planets_length]
+  # end
 
   def foreground_file
     EYES[seed % @@eyes_length]
@@ -27,17 +27,21 @@ class Compositor
   def background
     @background ||= begin
       rotations = seed % 4
-      canvas = ChunkyPNG::Image.from_file(background_file)
+      # use `background_file` eventually but right now just pick the first because **COLOR**
+      canvas = ChunkyPNG::Image.from_file("app/assets/images/planets/#{planet.pl_name}/000.jpg")
       rotations.times {|_| canvas.rotate_right! }
       canvas
     end
   end
 
   def foreground
+    retries = 0
     @foreground ||= begin
-      retries = 0
       image = ChunkyPNG::Image.from_file foreground_file
-      image.resample_bilinear!(325, (325 / image.width) * image.height)
+      width = (background.width * 0.4).round
+      aspect_ratio = image.width / image.height
+      height = (width / aspect_ratio).round
+      image.resample_bilinear!(width, height)
       image
     rescue
       @seed += 1

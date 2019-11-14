@@ -1,0 +1,34 @@
+<h1>XOPlanet</h1>
+<p>Name: <%= @name %></p>
+<script type="text/javascript">
+  function handleClick(match, name) {
+    if(match) {
+      window.location = `/?like=${name}`;
+    } else {
+      window.location = "/";
+    }
+  }
+</script>
+<div class="wrapper">
+  <div class="container">
+    <nav>
+      <%= image_tag('Logo.svg', class: 'logo') %>
+    </nav>
+    <section>
+      <h2>It's a match!</h2>
+      <div class="redcircle"></div>
+      <div class="greencircle">
+        <%= image_tag('like.svg', size: '120x120') %>
+      </div>
+      <div class="me">
+        <%= image_tag('earth-3.png') %>
+      </div>
+      <div class="them">
+        <img class="photo" src="<%= @composition.to_data_url %>" width="120"/>
+      </div>
+      <div class="purplecircle"></div>
+      <p class="message">You’ll die before you get there… but the journey is more important than the destination, right?</p>
+      <a class="button primary" href="/">Send a Message</a>
+      <a class="button" href="/">Keep Looking</a>
+  </div>
+</div>
