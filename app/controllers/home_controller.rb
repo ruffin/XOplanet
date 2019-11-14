@@ -7,7 +7,6 @@ class HomeController < ApplicationController
     end
     # @images = Dir["app/assets/images/planets/#{@planet.pl_name}/*.jpg"]
     @composition = Compositor.new(@planet).composite
-    @name = @planet.pl_name
     render is_match? ? 'match' : 'index'
   end
 
