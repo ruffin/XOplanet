@@ -13,6 +13,6 @@ class HomeController < ApplicationController
   end
 
   def is_match?
-    params[:match] && rand(10) < 3
+    params[:like] && rand(10) < 5
   end
 end

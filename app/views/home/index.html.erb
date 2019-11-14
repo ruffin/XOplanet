@@ -29,12 +29,12 @@
     </main>
     <div class="responses">
       <div class="no" >
-        <a href="#" onclick="handleClick(false, '<%= @name %>')">
+        <a onclick="handleClick(false, '<%= @name %>')">
           <%= image_tag('dislike.svg', id: "dislike-button") %>
         </a>
       </div>
       <div class="yes">
-        <a href="#" onclick="handleClick(true, '<%= @name %>')">
+        <a onclick="handleClick(true, '<%= @name %>')">
           <%= image_tag('like.svg', id: "like-button") %>
         </a>
       </div>
