@@ -1,8 +1,13 @@
 class HomeController < ApplicationController
   def index
-    # @planet = Planet.order('RANDOM()').first
-    @name = params[:name] || random_string
-    @composition = Compositor.new(@name).composite
+    if params[:name]
+      @planet = Planet.find_by(pl_name: params[:name])
+    else
+      @planet = Planet.order('RANDOM()').first
+    end
+    # @images = Dir["app/assets/images/planets/#{@planet.pl_name}/*.jpg"]
+    @composition = Compositor.new(@planet).composite
+    @name = @planet.pl_name
     render is_match? ? 'match' : 'index'
   end
 
