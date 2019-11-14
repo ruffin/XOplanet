@@ -56,7 +56,11 @@ body {
     width: 375px;
     overflow: hidden;
     background-color: #222;
-    position: relative;
+    position: fixed;
+  }
+  .text {
+    margin-top:380px;
+    overflow: scroll;
   }
 
   .responses {
