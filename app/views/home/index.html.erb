@@ -1,5 +1,4 @@
 <h1>XOPlanet</h1>
-<p>Name: <%= @name %></p>
 <script type="text/javascript">
   function handleClick(match, name) {
     if(match) {
@@ -17,6 +16,21 @@
     </nav>
     <main>
       <img class="photo" src="<%= @composition.to_data_url %>" width="375"/>
+    </main>
+    <div>
+      <h2><%= @planet.pl_name %></h2>
+      <p><%= @planet.st_dist %> parsecs away</p>
+      <br />
+      <h3>ABOUT ME</h3>
+      <p>Lorem Ipsum</p>
+      <br />
+      <h3>MASS</h3>
+      <p><%= @planet.st_mass %></p>
+      <h3>EFFECTIVE TEMPERATURE</h3>
+      <p><%= @planet.st_teff %></p>
+      <h3>ORBIT SEMI-MAJOR AXIS</h3>
+      <p><%= @planet.pl_orbsmax %></p>
+    </div>
 <!--
      <img src="<%= @composition.to_data_url %>" width="375"/>
       <a href="/" >
